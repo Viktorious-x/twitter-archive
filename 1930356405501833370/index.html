@@ -11,6 +11,21 @@
 		<script src="/assets/script.js" type="module"></script>
 		<script src="/assets/is-land.js" type="module"></script>
 
+		<!-- PAGEFIND ENGINE STYLES AND SCRIPTS -->
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js" type="module"></script>
+
+		<!-- EMBEDDED TWITTER DARK THEME PROPERTIES -->
+		<style>
+			body { background-color: #15202b !important; color: #f7f9fa !important; }
+			.tweet { background: #192734 !important; border: 1px solid #38444d !important; color: #f7f9fa !important; margin: 0 0 3.5rem !important; padding: 1.5rem !important; border-radius: 0.5rem !important; }
+			.tweet-text { color: #f7f9fa !important; }
+			.tweets-title a, .tweet-username, .tweets-nav a { color: #1d9bf0 !important; }
+			.tweet-metadata, .tweet-pretext { color: #8899a6 !important; }
+			input, button { background: #192734 !important; color: #fff !important; border: 1px solid #38444d !important; }
+			#search { --pagefind-ui-primary: #1d9bf0; --pagefind-ui-text: #f7f9fa; --pagefind-ui-background: #192734; --pagefind-ui-border: #38444d; margin-bottom: 2rem; }
+		</style>
+
 		
 	</head>
 	<body>
@@ -51,5 +66,12 @@ Have a great remaining of the day everyone!</div>
 		<footer>
 			<p>An open source project from <a href="https://github.com/tweetback">tweetback</a>.</p>
 		</footer>
+
+		<!-- PAGEFIND RUNTIME INITIALIZATION SCRIPT -->
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true, resetFilters: false });
+			});
+		</script>
 	</body>
 </html>
