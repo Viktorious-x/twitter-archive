@@ -285,9 +285,9 @@ img.tweet-media-og {
 	padding: 6px;
 	white-space: nowrap;
 	text-decoration: none;
-	background-color: #2d2d2d;
-	color: #fff;
-	border: 1px solid #2d2d2d;
+	background-color: #1c1c1c !important;
+	color: #e8e6e3 !important;
+	border: 1px solid #3a3a3a !important;
 	border-radius: 0.4em;
 	font-weight: 600;
 	vertical-align: text-bottom;
@@ -295,13 +295,14 @@ img.tweet-media-og {
 }
 .tweet-metadata .tag:link,
 .tweet-metadata .tag:visited {
-	color: #fff;
+	color: #1d9bf0 !important;
 }
 .tag-lite {
-	border-color: transparent;
+	border-color: transparent !important;
 	padding-left: 2px;
 	padding-right: 2px;
 	font-weight: 400;
+	background-color: transparent !important;
 }
 .tag-icon {
 	display: inline-flex;
@@ -312,36 +313,38 @@ img.tweet-media-og {
 	overflow: hidden;
 }
 .tag-naked {
-	background-color: transparent;
-	color: #a8a095;
+	background-color: transparent !important;
+	color: #a8a095 !important;
 }
 .tweet-metadata .tag-naked:link,
 .tweet-metadata .tag-naked:visited {
-	color: #a8a095;
+	color: #a8a095 !important;
 }
 .tag:first-child,
 .tag + .tag {
 	margin-left: 0;
 }
 .tag-favorite {
-	background-color: #e0245e;
-	border-color: #e0245e;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: #e0245e !important;
 }
 .tag-retweet {
-	background-color: #1d9bf0 !important;
-	border-color: #1d9bf0 !important;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: #1d9bf0 !important;
 }
 .tag-lite.tag-favorite,
 .tag-lite.tag-retweet {
-	background-color: transparent;
-	border-color: transparent;
+	background-color: transparent !important;
+	border-color: transparent !important;
 	font-weight: inherit;
 }
 .tag-lite.tag-favorite {
-	color: #e0245e;
+	color: #e0245e !important;
 }
 .tag-lite.tag-retweet {
-	color: #1d9bf0;
+	color: #1d9bf0 !important;
 }
 .tag-avatar {
 	padding: 0;
