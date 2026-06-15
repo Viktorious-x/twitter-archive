@@ -22,12 +22,13 @@ footer {
 	color: #a8a095;
 }
 :link,
-:visited {
+:visited,
+.tweet-text a,
+.tweets-nav a,
+.tweets-title a,
+.tweets li a {
 	color: #1d9bf0 !important;
 	text-decoration-color: #1d9bf0 !important;
-}
-.tweets-title a, .tweets-nav a {
-	color: #1d9bf0 !important;
 }
 .sr-only {
 	position: absolute !important;
@@ -271,7 +272,7 @@ a[href]:hover .tweet-media-load-error {
 	max-width: 12em;
 }
 .tweet-media:hover {
-	border-color: #1d9bf0;
+	border-color: #1d9bf0 !important;
 }
 img.tweet-media-og {
 	object-position: center;
@@ -327,8 +328,8 @@ img.tweet-media-og {
 	border-color: #e0245e;
 }
 .tag-retweet {
-	background-color: #1d9bf0;
-	border-color: #1d9bf0;
+	background-color: #1d9bf0 !important;
+	border-color: #1d9bf0 !important;
 }
 .tag-lite.tag-favorite,
 .tag-lite.tag-retweet {
