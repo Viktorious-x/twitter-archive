@@ -10,25 +10,32 @@ body {
 	font-family: system-ui, sans-serif;
 	margin: 0 auto;
 	padding: .5em;
+	background-color: #121212 !important;
+	color: #e8e6e3 !important;
 }
 footer {
-	font-size: 0.875em; /* 14px /16 */
+	font-size: 0.875em;
 	margin-top: 1em;
-	border-top: 1px solid #eee;
+	border-top: 1px solid #2e2e2e;
 	padding: 1em 0 0;
 	font-style: italic;
+	color: #a8a095;
 }
 :link,
-:visited {
-	color: #1C4A1D;
-	text-decoration-color: #17bf63;
+:visited,
+.tweet-text a,
+.tweets-nav a,
+.tweets-title a,
+.tweets li a {
+	color: #1d9bf0 !important;
+	text-decoration-color: #1d9bf0 !important;
 }
 .sr-only {
 	position: absolute !important;
 	width: 1px !important;
 	height: 1px !important;
 	padding: 0 !important;
-	margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
+	margin: -1px !important;
 	overflow: hidden !important;
 	clip: rect(0, 0, 0, 0) !important;
 	white-space: nowrap !important;
@@ -37,14 +44,15 @@ footer {
 input,
 button {
 	font-size: inherit;
+	background: #1c1c1c !important;
+	color: #e8e6e3 !important;
+	border: 1px solid #3a3a3a !important;
 }
 button {
-	border-radius: 0.2em; /* 4px /20 */
+	border-radius: 0.2em;
 }
 
-/* Flex lib */
 .lo {
-  /* The custom properties should not inherit from parent layouts */
   --lo-stackpoint: initial;
   --lo-margin-h: 0;
   --lo-margin-v: 0;
@@ -55,11 +63,8 @@ button {
   margin-left: calc(-1 * var(--lo-margin-h, 0));
 }
 .lo-c {
-  /* if a margin is in play, account for this in our stackpoint calculations */
-  /* notably this will also work if a stackpoint is not used. */
   --lo-margin-mod: calc( var(--lo-stackpoint, -1 * var(--lo-margin-h, 0px)) - var(--lo-stackpoint, 0px) + var(--lo-margin-h, 0px) );
   --lo-stackpoint-calc: calc( ( var(--lo-stackpoint, 100%) - 100% + var(--lo-margin-mod, 0px) ) * 999);
-
   flex-grow: 1;
   flex-basis: var(--lo-basis, var(--lo-stackpoint-calc, auto));
   margin: 0;
@@ -69,7 +74,6 @@ button {
 .lo-inline > .lo-c {
   flex-grow: 0;
 }
-
 .lo-cols {
 	column-gap: 10vw;
 	column-width: var(--lo-basis, 20em);
@@ -78,11 +82,10 @@ button {
 	break-inside: avoid;
 }
 
-/* Page level stuff */
 .tweets-title {
 	display: inline-block;
 	font-size: 1em;
-	line-height: 1.6875; /* 27px /16 */
+	line-height: 1.6875;
 	font-weight: 600;
 	margin: 0;
 	margin-right: 1.5em;
@@ -91,12 +94,12 @@ button {
 	display: inline-block;
 	padding: 0;
 	margin: 0;
-	line-height: 1.6875; /* 27px /16 */
+	line-height: 1.6875;
 }
 .tweets-nav li {
 	display: inline-block;
 }
-@media (min-width: 48em) { /* 768px */
+@media (min-width: 48em) {
 	.tweets-nav {
 		float: right;
 	}
@@ -106,14 +109,13 @@ button {
 	margin: 2em 0 1em;
 	padding: 0 0 2em;
 	text-align: center;
-	border-bottom: 2px solid #eee;
+	border-bottom: 2px solid #2e2e2e;
 	font-weight: 400;
 }
 .tweets-primary-count-num {
 	font-weight: 900;
 }
 
-/* Tweet list */
 .tweets {
 	max-width: 40em;
 	margin: 4em auto;
@@ -121,13 +123,12 @@ button {
 }
 .tweets .tweets-replies {
 	padding-left: 1em;
-	border-left: 2px solid rgba(0,0,0,0.1);
+	border-left: 2px solid #2e2e2e;
 	margin-left: -.75em;
 }
 .tweets .tweets-replies:empty {
 	display: none;
 }
-/* Used on tweet-pages only */
 .tweets-thread {
 	margin-top: 15vh;
 	margin-bottom: 15vh;
@@ -135,10 +136,9 @@ button {
 .tweets-linear-list .tweet {
 	margin-bottom: 3.5rem;
 	padding-bottom: 3.5rem;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #2e2e2e;
 }
 
-/* Individual tweet */
 .is_retweet .tweet-text {
 	opacity: .6;
 	font-style: italic;
@@ -147,6 +147,7 @@ button {
 	white-space: pre-wrap;
 	line-height: 1.4;
 	word-break: break-word;
+	color: #e8e6e3 !important;
 }
 .tweet-url {
 	word-break: break-word;
@@ -154,21 +155,18 @@ button {
 }
 .tweet-username {
 	font-weight: 500;
+	color: #1d9bf0 !important;
 }
 .tweet-username,
 .tweet-username:visited {
-	color: inherit;
-	font-size: 0.9545454545455em; /* 21px /22 */
+	font-size: 0.9545454545455em;
 }
 .tweet-pretext {
 	display: block;
 	font-style: italic;
-	font-size: 1rem; /* 16px /16 */
+	font-size: 1rem;
 	padding: 0 0 .4em;
-}
-.tweet-pretext,
-.tweet-pretext:visited {
-	color: #555;
+	color: #a8a095 !important;
 }
 .tweet-metadata {
 	display: block;
@@ -177,23 +175,24 @@ button {
 .tweet-metadata,
 .tweet-metadata :link,
 .tweet-metadata :visited {
-	color: #757575;
+	color: #a8a095 !important;
 }
-
-/* Individual tweet */
 .tweet {
-	font-size: 1.625em; /* 26px /16 */
+	font-size: 1.625em;
 	margin: 0 0 3.5rem;
-	padding: 0;
+	padding: 1.5rem !important;
 	list-style: none;
+	background: #181818 !important;
+	border: 1px solid #2d2d2d !important;
+	border-radius: 0.5rem !important;
 }
 .tweet.is_reply,
 .tweet.is_retweet {
-	font-size: 1.375em; /* 22px /16 */
+	font-size: 1.375em;
 }
 .tweet-next .tweet-text,
 .tweet-previous .tweet-text {
-	color: #777;
+	color: #a8a095;
 }
 .tweet-next .tag-favorite,
 .tweet-next .tag-retweet,
@@ -202,7 +201,6 @@ button {
 	opacity: .5;
 }
 
-/* Avatar */
 .tweet-avatar {
 	width: 27px;
 	height: 27px;
@@ -214,7 +212,6 @@ h1 .tweet-avatar {
 	margin-right: 5px;
 }
 
-/* Tweet Media */
 .tweet-medias {
 	display: flex;
 	margin: 1em 0 0;
@@ -234,7 +231,7 @@ img.tweet-media {
 	display: block;
 	width: 100%;
 	height: 100%;
-	border: 1px solid #ccc;
+	border: 1px solid #2d2d2d;
 }
 video.tweet-media {
 	max-width: 100%;
@@ -246,11 +243,11 @@ video.tweet-media {
 	border-top: 1px dashed;
 	margin: .5em 0;
 	padding-top: .5em;
-	color: #777;
+	color: #a8a095;
 }
 a[href]:focus .tweet-media-load-error,
 a[href]:hover .tweet-media-load-error {
-	color: #333;
+	color: #fff;
 }
 @supports (object-fit: cover) {
 	.tweet-media {
@@ -275,28 +272,22 @@ a[href]:hover .tweet-media-load-error {
 	max-width: 12em;
 }
 .tweet-media:hover {
-	border-color: #999;
+	border-color: #1d9bf0 !important;
 }
-.tweet-previous .tweet-media:hover,
-.tweet-next .tweet-media:hover {
-	opacity: 1;
-}
-/* OpenGraph images */
 img.tweet-media-og {
 	object-position: center;
 }
 
-/* Tags */
 .tag {
 	display: inline-block;
-	font-size: 0.8125rem; /* 13px /16 */
+	font-size: 0.8125rem;
 	margin: 0 0 0 4px;
 	padding: 6px;
 	white-space: nowrap;
 	text-decoration: none;
-	background-color: #999;
-	color: #fff;
-	border: 1px solid #999;
+	background-color: #1c1c1c !important;
+	color: #e8e6e3 !important;
+	border: 1px solid #3a3a3a !important;
 	border-radius: 0.4em;
 	font-weight: 600;
 	vertical-align: text-bottom;
@@ -304,13 +295,14 @@ img.tweet-media-og {
 }
 .tweet-metadata .tag:link,
 .tweet-metadata .tag:visited {
-	color: #fff;
+	color: #1d9bf0 !important;
 }
 .tag-lite {
-	border-color: transparent;
+	border-color: transparent !important;
 	padding-left: 2px;
 	padding-right: 2px;
 	font-weight: 400;
+	background-color: transparent !important;
 }
 .tag-icon {
 	display: inline-flex;
@@ -321,44 +313,54 @@ img.tweet-media-og {
 	overflow: hidden;
 }
 .tag-naked {
-	background-color: #fff;
-	color: #757575;
+	background-color: transparent !important;
+	color: #a8a095 !important;
 }
 .tweet-metadata .tag-naked:link,
 .tweet-metadata .tag-naked:visited {
-	color: #757575;
+	color: #a8a095 !important;
 }
 .tag:first-child,
 .tag + .tag {
 	margin-left: 0;
 }
 .tag-favorite {
-	background-color: #e0245e;
-	border-color: #e0245e;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: #e0245e !important;
 }
 .tag-retweet {
-	background-color: #397d58;
-	border-color: #397d58;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	color: #1d9bf0 !important;
 }
 .tag-lite.tag-favorite,
 .tag-lite.tag-retweet {
-	background-color: #fff;
-	border-color: transparent;
+	background-color: transparent !important;
+	border-color: transparent !important;
 	font-weight: inherit;
 }
 .tag-lite.tag-favorite {
-	color: #e0245e;
+	color: #e0245e !important;
 }
 .tag-lite.tag-retweet {
-	color: #096f37;
+	color: #1d9bf0 !important;
 }
 .tag-avatar {
 	padding: 0;
 }
 
-/* Search form */
 .tweets-search {
 	margin: 0 auto;
-	max-width: 40rem; /* 640px /16 */
-	font-size: 1.25em; /* 20px /16 */
+	max-width: 40rem;
+	font-size: 1.25em;
+}
+#search {
+	--pagefind-ui-scale: 1;
+	--pagefind-ui-primary: #1d9bf0;
+	--pagefind-ui-text: #e8e6e3;
+	--pagefind-ui-background: #181818;
+	--pagefind-ui-border: #2d2d2d;
+	--pagefind-ui-font: system-ui, sans-serif;
+	margin-bottom: 2rem;
 }
